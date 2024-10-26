@@ -13,7 +13,7 @@ I would recommend you install `micromamba` or `mamba`
 Then find a workspace and clone this repository 
 
 ```
-git clone <>
+git clone --recursive https://github.com/mhl787156/as2_robostack 
 cd as2_robostack
 mamba create -f environment.yaml
 ```
