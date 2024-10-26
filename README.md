@@ -40,9 +40,9 @@ git clone https://github.com/MOCAP4ROS2-Project/mocap4r2_msgs.git src/mocap4r2_m
 There are a couple of things to change, therefore copy the following files into aerostack2
 
 ```
-cp modifications/CMakeLists.txt src/aerostack2/as2_core/
+cp modifications/CMakeLists.txt src/aerostack2/as2_core/CMakeLists.txt
 
-cp modifications/detect_aruco_markers_behavior.cpp src/aerostack2/as2_behaviors/as2_behaviors_perception/detect_aruco_markers_behavior/src/
+cp modifications/detect_aruco_markers_behavior.cpp src/aerostack2/as2_behaviors/as2_behaviors_perception/detect_aruco_markers_behavior/src/detect_aruco_markers_behavior.cpp
 ```
 
 To build everything, in this repository now run the following
@@ -57,6 +57,7 @@ Finally in order to run some aerostack projects, we need to install `tmuxinator`
 
 ```
 gem install tmuxinator
+ln -s "$CONDA_PREFIX/bin/ruby" "$CONDA_PREFIX/share/rubygems/bin/ruby"
 ```
 
 ## Running
