@@ -51,6 +51,8 @@ To build everything, in this repository now run the following
 colcon build --symlink-install --packages-ignore as2_rviz_plugins
 ```
 
+> The `as2_rviz_plugins` doesn't build right now, will need to figure it out at some point. 
+
 Finally in order to run some aerostack projects, we need to install `tmuxinator`. We install using Ruby:
 
 ```
