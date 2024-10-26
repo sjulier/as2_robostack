@@ -43,6 +43,8 @@ There are a couple of things to change, therefore copy the following files into 
 cp modifications/CMakeLists.txt src/aerostack2/as2_core/CMakeLists.txt
 
 cp modifications/detect_aruco_markers_behavior.cpp src/aerostack2/as2_behaviors/as2_behaviors_perception/detect_aruco_markers_behavior/src/detect_aruco_markers_behavior.cpp
+
+cp modifications/drone.py src/aerostack2/as2_simulation_assets/as2_gazebo_assets/src/as2_gazebo_assets/models/drone.py
 ```
 
 To build everything, in this repository now run the following
@@ -73,6 +75,7 @@ Follow the example there, but I would recommend you clone the project into this 
 git clone https://github.com/aerostack2/project_gazebo
 ```
 
+> Note: Remember to `source install/setup.bash` before running anything
 
 
 
