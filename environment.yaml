@@ -1,0 +1,38 @@
+name: aerostack2
+channels:
+- conda-forge
+- robostack-staging
+dependencies:
+- ros-humble-desktop
+- compilers 
+- cmake 
+- pkg-config 
+- make 
+- ninja 
+- colcon-common-extensions
+- rosdep
+# Extras
+- geographiclib-cpp
+- libprotobuf==4.25.1
+- pydantic
+- pymap3d
+# From ROSDEP
+- ros-humble-librealsense2 
+- ros-humble-ros-gz 
+- ros-humble-sdformat-urdf 
+- ros-humble-geographic-msgs 
+- benchmark 
+- ros-humble-behaviortree-cpp-v3 
+- ros-humble-nav2-behavior-tree 
+- ros-humble-nav2-msgs 
+- ros-humble-ros-gz-sim 
+- ros-humble-ros-gz-bridge 
+- ros-humble-backward-ros 
+- jinja2
+# Usage
+- tmux
+
+# Need to run:
+# gem install tmuxinator
+# ln -s "$CONDA_PREFIX/bin/ruby" "$CONDA_PREFIX/share/rubygems/bin/ruby"
+
