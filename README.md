@@ -53,6 +53,9 @@ colcon build --symlink-install --packages-ignore as2_rviz_plugins
 
 > The `as2_rviz_plugins` doesn't build right now, will need to figure it out at some point. 
 
+> Note: It may fail the first time this command is run due to a `x86_64-conda-linux-gnu-c++: fatal error: Killed signal terminated program cc1plus
+compilation terminated.` I have found that just running the command again continues the build... 
+
 Finally in order to run some aerostack projects, we need to install `tmuxinator`. We install using Ruby:
 
 ```
