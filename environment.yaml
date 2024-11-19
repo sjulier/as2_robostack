@@ -17,7 +17,7 @@ dependencies:
 - pydantic
 - pymap3d
 # From ROSDEP
-- ros-humble-librealsense2 
+#- ros-humble-librealsense2 
 - ros-humble-ros-gz 
 - ros-humble-sdformat-urdf 
 - ros-humble-geographic-msgs 
