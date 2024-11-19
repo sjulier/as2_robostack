@@ -15,7 +15,7 @@ Then find a workspace and clone this repository
 ```
 git clone --recursive https://github.com/mhl787156/as2_robostack 
 cd as2_robostack
-mamba create -f environment.yaml
+mamba env create -f environment.yaml
 ```
 
 This will create an environment called `aerostack2`
