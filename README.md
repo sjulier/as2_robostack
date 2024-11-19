@@ -50,7 +50,7 @@ cp modifications/drone.py src/aerostack2/as2_simulation_assets/as2_gazebo_assets
 To build everything, in this repository now run the following
 
 ```
-colcon build --symlink-install --packages-ignore as2_rviz_plugins
+colcon build --symlink-install  --cmake-args -DPython3_FIND_VIRTUALENV=ONLY --packages-ignore as2_rviz_plugins
 ```
 
 > The `as2_rviz_plugins` doesn't build right now, will need to figure it out at some point. 
