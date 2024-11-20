@@ -58,7 +58,15 @@ colcon build --symlink-install  --cmake-args -DPython3_FIND_VIRTUALENV=ONLY --pa
 > Note: It may fail the first time this command is run due to a `x86_64-conda-linux-gnu-c++: fatal error: Killed signal terminated program cc1plus
 compilation terminated.` I have found that just running the command again continues the build... 
 
-Finally in order to run some aerostack projects, we need to install `tmuxinator`. We install using Ruby:
+Finally in order to run some aerostack projects, we need to install `tmuxinator`. We install using Ruby.
+
+Using a Mac, it is better to install a local version:
+
+```
+brew install ruby
+```
+
+Follow the instructions for .zshrc and open a new shell.
 
 ```
 gem install tmuxinator
