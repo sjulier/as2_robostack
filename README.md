@@ -1,5 +1,8 @@
 # Aerostack2 in Robostack
 
+> [!NOTE]  
+> This Readme is a temp version, it's currenlty link to the forked version from Simon.
+
 This project hopefully will allow you to install and run aerostack2 from within [Robostack](https://robostack.github.io/GettingStarted.html)
 
 ## Installation
@@ -13,7 +16,7 @@ I would recommend you install `micromamba` or `mamba`
 Then find a workspace and clone this repository 
 
 ```
-git clone --recursive https://github.com/mhl787156/as2_robostack 
+git clone --recursive https://github.com/sjulier/as2_robostack.git 
 cd as2_robostack
 mamba env create -f environment.yaml
 ```
@@ -28,49 +31,47 @@ mamba activate aerostack2
 
 ### Aerostack2
 
-Now clone in aerostack2. Run the following from this repository. (Make sure you put them in `src` folder)
-
-```
-git clone https://github.com/aerostack2/aerostack2.git src/aerostack2
-git clone https://github.com/MOCAP4ROS2-Project/mocap4r2_msgs.git src/mocap4r2_msgs
-```
-
-> TODO: Add as submodue
-
-There are a couple of things to change, therefore copy the following files into aerostack2
-
-```
-cp modifications/CMakeLists.txt src/aerostack2/as2_core/CMakeLists.txt
-
-cp modifications/detect_aruco_markers_behavior.cpp src/aerostack2/as2_behaviors/as2_behaviors_perception/detect_aruco_markers_behavior/src/detect_aruco_markers_behavior.cpp
-
-cp modifications/drone.py src/aerostack2/as2_simulation_assets/as2_gazebo_assets/src/as2_gazebo_assets/models/drone.py
-```
-
 To build everything, in this repository now run the following
 
 ```
-colcon build --symlink-install  --cmake-args -DPython3_FIND_VIRTUALENV=ONLY --packages-ignore as2_rviz_plugins --packages-ignore as2_realsense_interface
+colcon build --symlink-install  --cmake-args -DPython3_FIND_VIRTUALENV=ONLY --packages-ignore as2_realsense_interface
 ```
 
-> The `as2_rviz_plugins` doesn't build right now, will need to figure it out at some point. 
-
+<!-- Adam: Unsure about this, I don't have this error -->
 > Note: It may fail the first time this command is run due to a `x86_64-conda-linux-gnu-c++: fatal error: Killed signal terminated program cc1plus
 compilation terminated.` I have found that just running the command again continues the build... 
 
+#### tmuxinator
 Finally in order to run some aerostack projects, we need to install `tmuxinator`. We install using Ruby.
 
+<!-- Adam: I haven't tried local version, I just used via homebrew, I don't know the benifit of local version. -->
 Using a Mac, it is better to install a local version:
+- Local version
+    ```
+    brew install ruby
+    ```
 
-```
-brew install ruby
-```
+    Follow the instructions for .zshrc and open a new shell.
 
-Follow the instructions for .zshrc and open a new shell.
+    ```
+    gem install tmuxinator
+    ln -s "$CONDA_PREFIX/bin/ruby" "$CONDA_PREFIX/share/rubygems/bin/ruby"
+    ```
+- Via homebrew
+    ```
+    brew install tmuxinator
+    ```
 
+### Post Installation
+> [!NOTE]  
+> This is still a bit too complex, will need to simplify this.
+We need to source bash script
+We need to configure bash to configure mamba environment and as2_cli environment
 ```
-gem install tmuxinator
-ln -s "$CONDA_PREFIX/bin/ruby" "$CONDA_PREFIX/share/rubygems/bin/ruby"
+mamba activate aerostack2
+# PATH TO WORKSPACE
+export AEROSTACK2_PATH=$HOME/WorkSpace/as2_robostack/src/aerostack2 
+source $AEROSTACK2_PATH/as2_cli/setup_env.bash
 ```
 
 ## Running
@@ -83,7 +84,7 @@ Follow the example there, but I would recommend you clone the project into this 
 git clone https://github.com/aerostack2/project_gazebo
 ```
 
-> Note: Remember to `source install/setup.bash` before running anything
+<!-- > Note: Remember to `source install/setup.bash` before running anything -->
 
 
 

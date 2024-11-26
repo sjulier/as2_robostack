@@ -32,6 +32,9 @@ dependencies:
 # Usage
 - tmux
 
+# for compile
+- nlopt
+
 # Need to run:
 # gem install tmuxinator
 # ln -s "$CONDA_PREFIX/bin/ruby" "$CONDA_PREFIX/share/rubygems/bin/ruby"
